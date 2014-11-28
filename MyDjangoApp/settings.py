@@ -97,7 +97,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = 'path to my static root on server'
 
 #location of the static files for the project (i.e. .js, .css, .img)\
-STATIC_URL = '/staff/sukharni/django/dashboards/static/'
+STATIC_URL = 'path to /static/'
 
 #additional locations of static files, for example outside of the app directory
 STATICFILES_DIRS = ( os.path.join(os.path.dirname(__file__), '../dashboards/static'),)
