@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" uploadOnCheckin="2aa8e98c-4c27-4b04-a1da-156406f77168">
+    <serverData>
+      <paths name="idev">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/web/public/htdocs/staff/sukharni/django" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="lmem12" />
+  </component>
+</project>
+

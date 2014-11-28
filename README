@@ -1,0 +1,12 @@
+Author: Leo Sukharnikov
+
+This application is written in Python/Django.
+
+The application allows the following main functions:
+1. Create users with secure login/password combination
+2. Upload certain type of files
+3. Download these files
+4. Work with files intractively (update, versioning system, publish/unpublish)
+5. Send messages to web developer
+6. Use Django admin to manage the site
+

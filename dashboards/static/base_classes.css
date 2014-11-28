@@ -1,0 +1,70 @@
+table.super {
+    width: 795px;
+    height: 30px;
+    background-color: #ADD8E6;
+}
+td.super {
+    width: 50%;
+}
+table.child_right {
+    margin-left: 100px;
+    padding: 1px;
+    background-color: #ADD8E6;
+    height: 30px;
+
+}
+
+td {
+    text-align: left;
+
+}
+
+table.child_left {
+
+    /*padding: 0;*/
+    background-color: #ADD8E6;
+    height: 30px;
+
+}
+
+a {
+    /*display: compact;*/
+    font-weight: bold;
+    color: black;
+}
+#obj2 {
+    padding-left:15px;
+}
+#obj6 {
+    padding-left:15px;
+}
+#obj7 {
+    padding-right: 15px;
+}
+#obj4 {
+    padding-left: 15px;
+}
+#obj5 {
+    padding-left: 15px;
+}
+iframe{
+    background-color: white;
+    width: 795px;
+    height: 700px;
+    background-image: url('white_ncbi.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10%;
+
+}
+
+#body_login {
+    background-color: white;
+    background-image: url('NCBI-logo.jpg');
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+#table_login{
+    margin-top: 100px;
+    background-color: white;
+}

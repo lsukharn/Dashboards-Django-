@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+{% load staticfiles %}
+<style type="text/css">
+    @import url({% static "base_classes.css" %});
+</style>
+
+
+</head>
+<body id = "body_login">
+{% block login_password %}
+{% endblock %}
+
+<br>
+{% block register %}
+<h2> If you don't have a password, please <a href="/register/">register here: </a></h2>
+
+{% endblock %}
+</body>
+</html>

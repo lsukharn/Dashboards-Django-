@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    {% load staticfiles %}
+    <style type="text/css">
+    @import url({% static "about.css" %});
+    </style>
+
+    <script src="{% static 'about.js' %}">
+        <!--
+    //--></script>
+    <noscript>
+        Your browser doesn't support or has disabled JavaScript.
+        Please turn on JavaScript or choose a different browser.
+    </noscript>
+
+
+
+</head>
+<body>
+    <p id="p1">This web application is created to manage dashboard files.<br>
+Here you can accomplish the following:
+    </p>
+    <ul id="u1">
+    <li>Create or log in to personal user interface</li>
+        <p class="pclassAll">Please visit
+            <a href="root">intrawebdev2/staff/sukharni/django/</a> to start.
+        In case you don't have a password, register here: <a href="/register/">
+                create new user
+        </a></p>
+    <li>Upload your dashboards</li>
+        <p class="pclassAll">
+        After you logged in click on 'Upload dashboards' link and select title, status, type and resource of
+            your dashboard, then select the file that you want to upload. <b>Warning:</b> you must fill ALL the fields in oder to
+            proceed.
+        </p>
+    <li>Download dashboards using site search system</li>
+        <p class="pclassAll">
+        Click 'Download dashboard' link. In the frame below choose one of the options:
+            <ul class="ulOther">
+                <li> Search by dashboard's name</li>
+                    This option allows for case-insensitive partial name matching
+                <li> Select a dashboard from list</li>
+                    Simply select a dashboard from a scroll-down list
+            </ul>
+        </p>
+    <li>Leave comments and suggestions about site performance</li>
+        <p class="pclassAll">
+        By cliking 'Contact' you select an e-mail form. Your comments will be greatly appreciated!
+        </p>
+    </ul>
+
+
+<br><br><br><br><br><br><br>
+
+<p id="cont">Some text</p>
+<script src="{% static 'about.js' %}">
+        <!--
+    //--></script>
+
+
+</body>
+</html>

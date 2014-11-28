@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+{%  block content %}
+    {% if errors %}
+        {% for error in errors %}
+    <p style="color:red;">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+<form action="" method="get"> {#action="" means 'return to the same form'#}
+    {% csrf_token %}
+    <table id="dash_name">
+        <tr>
+    <td><lablel for="id_password">Search by dashboard's name:</lablel></td>
+    <td id="one">{{ search.search_by_name }}</td>
+    <td>{{ search.search_by_name.errors }}</td>
+        </tr>
+        <tr>
+    <td><lablel for="id_password">OR select a dashboard from list:</lablel></td>
+    <td id="two">{{ search.select_all }}</td>
+    <td>{{ search.select_all.errors }}</td>
+        </tr>
+        <tr>
+    <td><input type="submit" value = "Download"></td>
+        </tr>
+        </table>
+    </form>
+
+
+{% endblock %}
+
+    </body>
+</html>

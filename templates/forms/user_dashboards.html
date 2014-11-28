@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    {% load staticfiles %}
+    <style type="text/css">
+    @import url({% static "about.css" %});
+    </style>
+</head>
+<body>
+
+
+<table>
+<tr>
+    <td>Count</td>  <td> File Name </td> <td>Dashboard name</td> <td>Dashboard status</td> <td>Dashboard type</td>
+    <td>Dashboard resource</td>
+</tr>
+    {% for tuple in url_list %}
+<tr>
+    <td>{{ tuple.0 }}</td>
+    <td>
+    <a href="{{ tuple.1 }}{{ tuple.2 }}" target="_blank">{{ tuple.2 }}</a>
+    </td>
+    <td>{{ tuple.3 }}</td>
+    <td>
+        {% ifequal tuple.4 "1" %} <img src="{% static "colors/green.png" %}" height="10" width="10"> {% endifequal %}
+        {% ifequal tuple.4 "2" %} <img src="{% static "colors/yellow.jpg" %}" height="10" width="10"> {% endifequal %}
+        {% ifequal tuple.4 "3" %} <img src="{% static "colors/red.jpg" %}" height="10" width="10"> {% endifequal %}
+    </td>
+    <td>
+        {% ifequal tuple.5 "1" %} <img src="{% static "colors/green.png" %}" height="10" width="10"> {% endifequal %}
+        {% ifequal tuple.5 "2" %} <img src="{% static "colors/yellow.jpg" %}" height="10" width="10"> {% endifequal %}
+        {% ifequal tuple.5 "3" %} <img src="{% static "colors/red.jpg" %}" height="10" width="10"> {% endifequal %}
+    </td>
+    <td>{{ tuple.6 }}</td>
+</tr>
+     {% endfor %}
+</table>
+<p></p>
+
+<table>
+    <caption> Legend</caption>
+<tr>
+    <td>Dashboard status: <ul><li><img src="{% static "colors/green.png" %}" height="10" width="10"> - green(ready to publish),</li>
+        <li><img src="{% static "colors/yellow.jpg" %}" height="10" width="10"> - yellow(working on it),</li>
+        <li><img src="{% static "colors/red.jpg" %}" height="10" width="10"> - red(just started a dashboard)</li>
+    </ul>
+    </td>
+    <td>Dashboard type: <ul><li><img src="{% static "colors/green.png" %}" height="10" width="10"> - curated,</li>
+        <li><img src="{% static "colors/yellow.jpg" %}" height="10" width="10"> - experimental, </li>
+        <li><img src="{% static "colors/red.jpg" %}" height="10" width="10"> - unfinished </li>
+        </ul>
+    </td>
+</tr>
+</table>
+    <form action="" method="get">
+<table>
+    <p></p>
+    <tr>
+<td>Delete dashboard? (Cannot be undone!)</td>
+        <td>{{ delete.check_box }}</td>
+        </tr>
+    <tr><td>
+    <input type="submit" value="Yes, delete!">
+
+    </td>
+        <td></td>
+    </tr>
+</table>
+            </form>
+<form action="/publish/" method="get">
+<table>
+    <p></p>
+    <tr>
+<td>Publish dashboard? </td>
+        <td>{{ publish.check_box }}</td>
+        </tr>
+    <tr><td>
+    <input type="submit" value="Publish">
+
+    </td>
+        <td></td>
+    </tr>
+</table>
+            </form>
+<table>
+<p></p>
+<tr><h3>Published dashboards:</h3></tr>
+<tr>
+    <td>Count</td>  <td> File Name </td> <td>Dashboard name</td>
+    <td>Dashboard resource</td> <td>Intranet link</td>
+</tr>
+    {% for tuple in url_published_list %}
+<tr>
+    <td>{{ tuple.0 }}</td>
+    <td>
+    <a href="{{ tuple.1 }}{{ tuple.2 }}" target="_blank">{{ tuple.2 }}</a>
+    </td>
+    <td>{{ tuple.3 }}</td>
+    <td>{{ tuple.5 }}</td>
+    <td><a href="{{ tuple.4 }}{{ tuple.2 }}" target="_blank">{{ tuple.3 }}</a></td>
+
+</tr>
+     {% endfor %}
+</table>
+
+
+<form action="/unpublish/" method="get">
+<table>
+    <tr>
+<td>UNpublish dashboard? </td>
+        <td>{{ unpublish.check_box}}</td>
+        </tr>
+    <tr><td>
+    <input type="submit" value="Unpublish">
+
+    </td>
+        <td></td>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>

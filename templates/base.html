@@ -1,0 +1,50 @@
+<!DOCTYPE html pubtdc "-//w3c//dtd html 4.01//en">
+<html>
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+
+{% load staticfiles %}
+<style type="text/css">
+    @import url({% static "base_classes.css" %});
+</style>
+</head>
+
+<body>
+{% block content %}
+<h1>Dashboard management</h1>
+    <table class="super" >
+    <tr>
+    <td>
+        <table class="child_left" >
+            <tr>
+             <td><a href="/upload/" target="iframe_manage"><div id="obj1">Upload dashboard</div></a></td> 
+             <td><a href="/download/" target="iframe_manage"><div id="obj2">Download dashboard</div></a></td>  
+            <td><a href="/my_dashboards/" target="iframe_manage"><div id="obj6">My Dashboards</div></a></td>
+            </tr>
+        </table>
+    </td>
+    <td>
+        <table class="child_right" >
+            <tr>
+             <td><a href="/contact/" target="iframe_manage"><div id="obj3">Contact</div></a></td> 
+             <td><a href="/about/" target="iframe_manage"><div id="obj4">About</div></a></td> 
+             <td><a href="/log_out/" target="_top"><div id="obj5">Log out</div></a></td> 
+
+            </tr>
+        </table>
+    </td>
+    </tr>
+     </table>
+
+        <iframe src="" name="iframe_manage">
+        </iframe>
+
+{% block footer %}
+<hr>
+    <p>Please send any requests to my email@company.com</p>
+{% endblock %}
+{% endblock %}
+</body>
+</html>

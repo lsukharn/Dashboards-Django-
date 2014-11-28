@@ -1,0 +1,72 @@
+{% extends "base_login.html" %}
+{% block title %}
+Register
+{% endblock %}
+
+{% load staticfiles %}
+<style type="text/css">
+    @import url({% static "base_classes.css" %});
+</style>
+
+{% block register %}
+ {%  if register.errors %}
+<p style="color: red;"> Please correct the error<td>{{ register.errors|pluralize }}</td>: </p>
+ {%  endif %}
+
+<div id="table_login">
+
+<p></p><h2> Please enter registration information:</h2></p>
+<form action = "" method = "post" >
+{% csrf_token %}
+    <table >
+<tr>
+    <td><lablel for="id_register"><b>First name:</b></lablel></td>
+    <td>{{ register.first }}</td>
+    <td>{{ register.fisrt.errors }}</td>
+</tr>
+<tr>
+    <td><lablel for="id_password"><b>Last name:</b></lablel></td>
+    <td>{{ register.last }}</td>
+    <td>{{ register.last.errors }}</td>
+</tr>
+<tr>
+
+    <td><lablel for="id_email"><i><b>Your e-mail:</b></i></lablel></td>
+    <td>{{ register.email }}</td>
+    <td>{{ register.email.errors }}</td>
+</tr>
+<tr>
+    <td colspan="3"><h5>ATTENTION! Please select the same **** as your ****!</h5></td>
+        </tr>
+<tr>
+
+    <td><lablel for="id_login">Login:</lablel></td>
+    <td>{{ register.login }}</td>
+    <td>{{ registerlogin.errors }}</td>
+</tr>
+<tr>
+
+    <td><lablel for="id_login">Login repeat:</lablel></td>
+    <td>{{ register.login_r }}</td>
+    <td>{{ register.login_r.errors }}</td>
+</tr>
+<tr>
+
+    <td><lablel for="id_password">Password:</lablel></td>
+    <td>{{ register.password }}</td>
+    <td>{{ register.password.errors }}</td>
+</tr>
+<tr>
+
+    <td><lablel for="id_password">Password repeat:</lablel></td>
+    <td>{{ register.password_r }}</td>
+    <td>{{ register.password_r.errors }}</td>
+</tr>
+<tr>
+<td><input type="submit" value="Register"></td>
+</tr>
+        </table>
+</form>
+</div>
+
+{% endblock %}

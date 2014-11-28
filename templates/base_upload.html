@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+
+ {%  if form.errors %}
+<p style="color: red;"> Please correct the error{{ form.errors|pluralize }}: </p>
+    {%  endif %}
+
+<form action = "" method = "post" enctype="multipart/form-data">
+{% csrf_token %}
+    <table>
+        <tr>
+    <td><lablel for="id_title">Dashboard title:</lablel></td>
+    <td>{{ form.title }}</td>
+    <td style="color:red">{{ form.title.errors }}{{ lines.0 }}</td>
+        </tr>
+        <tr>
+    <td><lablel for="id_status">Dashboard status:</lablel></td>
+    <td>{{ form.status }}</td>
+    <td>{{ form.status.errors }}</td>
+        </tr>
+        <tr>
+    <td><lablel for="id_status">Dashboard type:</lablel></td>
+    <td>{{ form.type }}</td>
+    <td>{{ form.type.errors }}</td>
+        </tr>
+        <tr>
+    <td><lablel for="id_status">Resource:</lablel></td>
+    <td>{{ form.resource }}</td>
+    <td>{{ form.resource.errors }}</td>
+        </tr>
+        <tr>
+    <td><lablel for="file">Browse...</lablel></td>
+    <td>{{ form.file }}</td>
+    <td>{{ form.file.errors }}</td>
+        </tr>
+        <tr>
+    <td><input type="submit" value="Save"></td>
+        </tr>
+     </table>
+    </form>
+</body>
+</html>
