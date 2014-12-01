@@ -9,9 +9,6 @@ import os
 import datetime
 import shutil
 
-#render base.html when user successfully logged in
-def base_request(request):
-    return render_to_response('base.html')
 
 #the following four functions are called when HTTPResponceRedirect is object is returned
 #define a function that produces an HTTPResponse object with 'thank you' message
@@ -27,10 +24,6 @@ def error_login(request):
 def success(request):
     return HttpResponse('Your profile has been successfully created! Please<a href=%s> login here</a>:'
                         %request.META.get('HTTP_REFERER')[:-9])
-
-#render a help page
-def about(request):
-    return render_to_response('about.html')
 
 #render user_dashboards.html which will display dashboards, list of dashboards for deletion, publication and 'unpublishing'
 def my_dashboards(request):
