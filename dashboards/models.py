@@ -33,8 +33,6 @@ class Message_form(models.Model):
 
     def __unicode__(self):
         return u'%s %s %s' % (self.fname, self.lname, self.contact_email)
-    def __str__(self):
-        return u'%s %s %s' % (self.fname, self.lname, self.contact_email)
 
 class Published(models.Model):
     id_user = models.ForeignKey(User, to_field='id')
