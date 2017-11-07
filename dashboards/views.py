@@ -155,7 +155,7 @@ def unpublish(request):
         return TemplateResponse(request, 'redirect_template.html', {'path to root'})
 
 #let user to send a contact form
-def contact1(request):
+def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
