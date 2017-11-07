@@ -17,7 +17,7 @@ urlpatterns = patterns('dashboards.views',
     (r'^contact/error_login/$', 'error_login'),
     (r'^contact/error_message/$', 'error_message'),
     (r'^about/$', TemplateView.as_view(template_name='about.html')), #render a help page
-    (r'^contact/$', 'contact1'),
+    (r'^contact/$', 'contact'),
     (r'^log_out/$', 'logout'),
     (r'^my_dashboards/$', 'my_dashboards'),
     (r'^publish/$', 'publish'),
